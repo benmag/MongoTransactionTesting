@@ -41,7 +41,7 @@ db.once('open', function callback () {
 	.on("data", function(data){
 	
 
-		var row = new dataPoint({ ID: data[0], foo: data[1], bar: data[2]})
+		var row = new dataPoint(data);
 	
 		row.save(function (err, row) {
 			if (err) return console.error(err);
